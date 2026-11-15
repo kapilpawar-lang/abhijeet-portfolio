@@ -302,7 +302,7 @@ export default function Portfolio() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 relative z-10">
-            <a href="mailto:abhijeet@example.com" className="px-6 py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold text-sm hover:bg-emerald-400 transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20">
+            <a href="mailto:kapilpawar015@gmail.com" className="px-6 py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold text-sm hover:bg-emerald-400 transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20">
               <Mail size={16} /> Email Me
             </a>
             <a href="https://github.com/" target="_blank" rel="noreferrer" className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium text-sm transition-all flex items-center gap-2">
