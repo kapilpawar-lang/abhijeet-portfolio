@@ -2,6 +2,19 @@ import React from 'react';
 import { Cpu, FileText, ArrowUpRight, GraduationCap, Mail, MapPin } from 'lucide-react';
 
 export default function Portfolio() {
+  const projects = [
+    {
+      title: "Cyber-Arena",
+      subtitle: "Autonomous Red-Team vs. Blue-Team Cyber Range",
+      description:
+        "An interactive real-time security simulation powered by FastAPI and autonomous Python multi-agents, featuring live network telemetry and automated threat defense.",
+      tech: ["Python", "FastAPI", "Multi-Agent AI", "Tailwind CSS"],
+      github: "https://github.com/kapilpawar-lang/cyber-arena",
+      demo: "https://www.youtube.com/results?search_query=Building+an+Autonomous+Cyber-Range+with+FastAPI+%26+Python+Multi-Agents",
+    },
+    // Add future projects right below this line!
+  ];
+   
   return (
     <div className="min-h-screen bg-[#090806] text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950 relative overflow-hidden">
       
@@ -59,6 +72,7 @@ export default function Portfolio() {
 
           <nav className="hidden md:flex items-center gap-8 text-sm text-slate-400 font-medium">
             <a href="#about" className="hover:text-emerald-400 transition-colors">About</a>
+            <a href="#projects" className="text-slate-300 hover:text-emerald-400 transition-colors">Projects</a>
             <a href="#experience" className="hover:text-emerald-400 transition-colors">Experience</a>
             <a href="#education" className="hover:text-emerald-400 transition-colors">Education</a>
             <a href="#contact" className="px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition-all">Let&apos;s Talk</a>
@@ -230,6 +244,70 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
+        {/* Projects Section */}
+        <section id="projects" className="max-w-6xl mx-auto px-6 py-20 relative z-10">
+          <div className="mb-12">
+            <p className="text-emerald-400 font-mono text-sm mb-2">// FEATURED WORK</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              Featured <span className="text-emerald-400">Projects</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group"
+              >
+                <div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs font-mono text-emerald-400/80 mt-1 mb-4">
+                    {project.subtitle}
+                  </p>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.map((item, i) => (
+                      <span
+                        key={i}
+                        className="text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-5 pt-4 border-t border-slate-800">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-200 hover:text-emerald-400 transition-colors"
+                    >
+                      View Code <ArrowUpRight size={16} />
+                    </a>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                      >
+                        Watch Demo <ArrowUpRight size={16} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          </section>
 
         {/* Education Section */}
         <section id="education" className="mt-28">
